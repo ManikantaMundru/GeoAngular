@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import './../models/customer';
+import { Customer } from './../models/customer';
 
 @Component({
   selector: 'app-registration',
@@ -6,10 +9,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  // form group
+  customerForm: FormGroup;
+  // Data model
+  customer: Customer = new Customer();
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+
+    // form model
+    this.customerForm = this.fb.group({
+      firstName: '',
+      lastName: '',
+      email: '',
+      sendCatalog: true
+
+    });
+  }
+
+
+  populateTestData(): void {
+    this.customerForm.patchValue({
+      firstName: 'Jack',
+      lastName: 'Harkness',
+      sendCatalog: false
+    });
+  }
+
+  save() {
+    console.log(this.customerForm);
+    console.log('Saved: ' + JSON.stringify(this.customerForm.value));
   }
 
 }
