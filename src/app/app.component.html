@@ -1,12 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
-<nav class="navbar navbar-dark bg-dark mb-5">
-  <a class="navbar-brand" href="/"><i class="fa fa-paw fa-6" style="font-size:16px" aria-hidden="true"></i>Geo connect</a>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/"><i class="fa fa-dashcube fa-3" style="font-size:22px" aria-hidden="true"></i><span> Geo Connect JIRA</span></a>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home</a>
-      <a class="nav-item nav-link" href="#">About</a>
-      <a class="nav-item nav-link" href="#">Contact</a>
+   
     </div>
   </div>
   <div class="navbar-expand ml-auto navbar-nav">
@@ -24,15 +20,32 @@
   </div>
 </nav>
 
-
+<nav class="navbar-primary" style="margin-top:5px">
+<a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
+<ul class="navbar-primary-menu">
+<li>
+  <a href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">All Projects</span></a>
+  <a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">JIRA Board</span></a>
+  <a href="#"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">My Tasks</span></a>
+  <a href="#"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Test Cases</span></a>
+  <a href="#"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">Dashboard</span></a>
+  <a class="nav-item nav-link active" routerLink='registration'  routerLinkActive="active"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">Register</span></a>
+</li>
+</ul>
+</nav>
+<div class="main-content">
 <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-md-2"></div>
-      <div class="col-md-10">
-          <app-registration></app-registration>
-      </div>
-     
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
     </div>
+   
+  </div>
 </div>
+</div>
+
+
+
+
 
