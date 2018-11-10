@@ -29,11 +29,11 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  populateTestData(): void {
+  ResetForm(): void {
     this.customerForm.patchValue({
-      firstName: 'Jack',
-      lastName: 'Harkness',
-      sendCatalog: false
+      firstName: '',
+      lastName: '',
+      sendCatalog: true
     });
   }
 
